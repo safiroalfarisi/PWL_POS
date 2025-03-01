@@ -28,6 +28,7 @@ Route::prefix('products')->group(function () {
     Route::get('/', [ProductController::class, 'index']);
 });
 Route::get('/kategori', [KategoriController::class, 'index']);
+Route::get('/user', [UserController::class, 'index']);
 Route::get('/category', [CategoryController::class, 'index']);
 Route::get('/user/{id}/name/{name}', [UserController::class, 'profile']);
 Route::get('/sales', [SalesController::class, 'index']);
