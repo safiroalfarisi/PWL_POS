@@ -19,13 +19,12 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SalesController;
+use App\Http\Controllers\WelcomeController;
 
-Route::get('/', function (){
-    return view('welcome');
-});
+Route:: get('/', [WelcomeController::class, 'index']);
 route::get('/level', [LevelController::class, 'index']);
 Route::prefix('products')->group(function () {
-    Route::get('/', [ProductController::class, 'index']);
+Route::get('/', [ProductController::class, 'index']);
 });
 Route::get('/kategori', [KategoriController::class, 'index']);
 Route::get('/user', [UserController::class, 'index']);
