@@ -9,7 +9,7 @@ class LevelModel extends Model
 {
     use HasFactory;
 
-    protected $table = 'm_user'; // Sesuaikan dengan tabel level di database
+    protected $table = 'm_level'; // Sesuaikan dengan tabel level di database
     protected $primaryKey = 'level_id';
     protected $fillable = ['nama_level'];
 }
