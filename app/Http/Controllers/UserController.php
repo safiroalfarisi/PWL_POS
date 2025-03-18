@@ -60,6 +60,7 @@ class UserController extends Controller
     }
 
 
+
     // Menampilkan halaman form tambah user
     public function create()
     {
