@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

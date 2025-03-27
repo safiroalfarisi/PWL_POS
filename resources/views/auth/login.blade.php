@@ -61,6 +61,12 @@
                         <div class="col-4">
                             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                         </div>
+                        <!-- /.col -->
+                        <div class="row mt-2">
+                            <div class="col-12 text-center">
+                                <a href="{{ url('register') }}" class="btn btn-link">Register</a>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
