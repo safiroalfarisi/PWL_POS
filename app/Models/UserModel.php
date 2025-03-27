@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Foundation\Auth\User as Authenticable; // implementasi class Authenticable
+use Illuminate\Foundation\Auth\User as Authenticatable; // implementasi class Authenticable
 
 
-class UserModel extends Authenticable
+class UserModel extends Authenticatable
 {
     use HasFactory;
 
@@ -27,4 +27,15 @@ class UserModel extends Authenticable
     public function level(): BelongsTo{
         return $this->belongsTo(LevelModel::class, 'level_id', 'level_id');
     }
+
+    public function getRoleName(): string
+    {
+        return $this->level->level_kode;
+    }
+
+    public function hasRole($role): bool
+    {
+        return $this->level->level_kode === $role;
+    }
+
 }
