@@ -65,4 +65,13 @@
             </li>
         </ul>
     </nav>
+    <!-- Tombol Logout -->
+    <div class="mt-3 p-3">
+        <form action="{{ url('/logout') }}" method="POST">
+            @csrf
+            <button type="submit" class="btn btn-danger btn-block">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </form>
+    </div>
 </div>
