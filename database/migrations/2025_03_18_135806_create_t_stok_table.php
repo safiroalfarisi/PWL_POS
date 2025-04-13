@@ -11,17 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('t_stock', function (Blueprint $table) {
-            $table->id('stock_id');
-            $table->unsignedBigInteger('supplier_id')->index(); //indexing untuk foreignkey
-            $table->unsignedBigInteger('barang_id')->index(); 
+        Schema::create('t_stok', function (Blueprint $table) {
+            $table->id('stok_id');
+            $table->unsignedBigInteger('supplier_id')->index();
+            $table->unsignedBigInteger('barang_id')->index();
             $table->unsignedBigInteger('user_id')->index();
-            $table->dateTime('stock_tanggal');
-            $table->integer('stock_jumlah');
-            $table->timestamps();
+            $table->dateTime('stok_tanggal');
+            $table->integer('stok_jumlah');
 
+            // Mendefinisikan Foreign Key pada kolom supplier_id mengacu pada kolom supplier_id di tabel m_supplier
             $table->foreign('supplier_id')->references('supplier_id')->on('m_supplier');
+            // Mendefinisikan Foreign Key pada kolom barang_id mengacu pada kolom barang_id di tabel m_barang
             $table->foreign('barang_id')->references('barang_id')->on('m_barang');
+            // Mendefinisikan Foreign Key pada kolom used_id mengacu pada kolom user_id di tabel m_user
             $table->foreign('user_id')->references('user_id')->on('m_user');
         });
     }
@@ -31,8 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('t_stok', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('t_stok');
     }
 };
